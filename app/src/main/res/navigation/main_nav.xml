@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.calc.MainFragment"
+        android:label="@string/main_menu"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_demandFragment"
+            app:destination="@id/demandFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_monopolyFragment"
+            app:destination="@id/monopolyFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_perfectCompetitionFragment2"
+            app:destination="@id/perfectCompetitionFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_financesFragment"
+            app:destination="@id/financesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/demandFragment"
+        android:name="com.example.calc.DemandFragment"
+        android:label="@string/demand_and_supply"
+        tools:layout="@layout/fragment_demand" />
+    <fragment
+        android:id="@+id/monopolyFragment"
+        android:name="com.example.calc.MonopolyFragment"
+        android:label="@string/monopoly"
+        tools:layout="@layout/fragment_monopoly" />
+    <fragment
+        android:id="@+id/perfectCompetitionFragment"
+        android:name="com.example.calc.PerfectCompetitionFragment"
+        android:label="@string/perfect_comp" />
+    <fragment
+        android:id="@+id/financesFragment"
+        android:name="com.example.calc.FinancesFragment"
+        android:label="@string/finances"
+        tools:layout="@layout/fragment_finances" />
+</navigation>

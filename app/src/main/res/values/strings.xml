@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Calc</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="demand_and_supply">Спрос и предложение</string>
+    <string name="monopoly">Монополия</string>
+    <string name="calc">Экономический калькулятор</string>
+    <string name="main_menu">Главное меню</string>
+    <string name="perfect_comp">Совершенная конкуренция</string>
+    <string name="finances">Финансы</string>
+    <string name="input_f">Введите функцию Qs</string>
+    <string name="input_s">Введите функцию Qd</string>
+    <string name="output_Q">Q=</string>
+    <string name="output_P">P=</string>
+    <string name="output_E">E=</string>
+    <string name="tx">tx=</string>
+    <string name="ty">ty=</string>
+    <string name="done">Готово</string>
+    <string name="B_potr">B. потр.=</string>
+    <string name="B_proizv">B. произ.=</string>
+    <string name="G">G=</string>
+    <string name="government">Вмешательства государства</string>
+</resources>
