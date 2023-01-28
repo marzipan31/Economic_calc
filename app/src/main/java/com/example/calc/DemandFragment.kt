@@ -117,6 +117,26 @@ fun cutString(str: String): String {
     return res
 }
 
+fun getSqureForQd(indexes: List<Double>, P: Double, Q: Double): Double {
+    var a = indexes[2]
+    var b = indexes[1]
+    var c = indexes[0]
+    if (a == 0.0) {
+        return (c - P) * Q / 2.0
+    }
+    return c * P + 3.0 * P * P + c * P * P * P / 3.0 - P * Q
+}
+
+fun getSquareForQs(indexes: List<Double>, P: Double, Q: Double): Double {
+    var a = indexes[2]
+    var b = indexes[1]
+    var c = indexes[0]
+    if (a == 0.0) {
+        return (P - c) * Q / 2.0 + c * Q
+    }
+    return P * Q - (c * P + 3.0 * P * P + c * P * P * P / 3.0)
+}
+
 class DemandFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -136,6 +156,16 @@ class DemandFragment : Fragment() {
         val outputP: TextView = view.findViewById(R.id.outputP)
         val outputQ: TextView = view.findViewById(R.id.outputQ)
         val outputE: TextView = view.findViewById(R.id.outputE)
+        val outputBPotr: TextView = view.findViewById(R.id.outputBPotr)
+        val outputBProizv: TextView = view.findViewById(R.id.outputBProizv)
+        val outputTX: TextView = view.findViewById(R.id.outputTX)
+        val outputPGov: TextView = view.findViewById(R.id.outputPGov)
+        val outputQGov: TextView = view.findViewById(R.id.outputQGov)
+        val outputG: TextView = view.findViewById(R.id.outputG)
+        val outputEGov: TextView = view.findViewById(R.id.outputEGov)
+        val outputBPotrGov: TextView = view.findViewById(R.id.outputBPotrGov)
+        val outputBProizvGov: TextView = view.findViewById(R.id.outputBProizvGov)
+        val outputSocialW: TextView = view.findViewById(R.id.outputSocialW)
 
         button.setOnClickListener {
             if (input_Qs.text.isEmpty() || input_Qd.text.isEmpty()) {
@@ -168,6 +198,14 @@ class DemandFragment : Fragment() {
                     Toast.LENGTH_LONG
                 ).show()
                 val p = solveOfEquation(res)
+                val rsQs = mutableListOf(0.0, 0.0, 0.0)
+                rsQs[0] = indexesQs[0]!!
+                rsQs[1] = indexesQs[1]!!
+                rsQs[2] = indexesQs[2]!!
+                val rsQd = mutableListOf(0.0, 0.0, 0.0)
+                rsQd[0] = indexesQd[0]!!
+                rsQd[1] = indexesQd[1]!!
+                rsQd[2] = indexesQd[2]!!
                 if (p == 1e12) {
                     Toast.makeText(
                         view.context, "ОШИБКА!!!",
@@ -186,7 +224,35 @@ class DemandFragment : Fragment() {
                                 .toDouble())
                         outputE.setText(cutString(e.toString()))
                     }
+                    outputBProizv.setText(cutString(getSquareForQs(rsQs, p, q).toString()))
+                    outputBPotr.setText(cutString(getSqureForQd(rsQd, p, q).toString()))
                 }
+                val a1 = rsQs[2]
+                val b1 = rsQs[1]
+                val c1 = rsQs[0]
+                val a2 = rsQd[2]
+                val b2 = rsQd[1]
+                val c2 = rsQd[0]
+            //tx = (-c1 - P * b1 + c2 + P * b2) / b1
+                //b1 * tx + b1 * P + c1 = b2 * P + c2
+                //((b2 * P + c2) * (-c1 - P * b1 + c2 + P * b2)) / b1
+                //P = (-c1 * b2 + 2 * b2 * c2 - b1 * c2) / (2 * (-(b2 * b2 - b1 * b2)))
+                val Pgov = (-c1 * b2 + 2 * b2 * c2 - b1 * c2) / (2 * (-(b2 * b2 - b1 * b2)))
+                outputPGov.setText(cutString(Pgov.toString()))
+                val tx = -(-c1 - Pgov * b1 + c2 + Pgov * b2) / b1;
+                outputTX.setText(cutString(tx.toString()))
+                val Qgov = c2 + b2 * Pgov
+                outputQGov.setText(cutString(Qgov.toString()))
+                val G = tx * Qgov
+                outputG.setText(cutString(G.toString()))
+                val Egov = b2 * (Pgov / Qgov)
+                outputEGov.setText(cutString(Egov.toString()))
+                val BPotr = (c2 - Pgov) * Qgov / 2.0
+                val Bproizv = (Qgov * (Pgov - tx)) / 2.0
+                outputBPotrGov.setText(cutString(BPotr.toString()))
+                outputBProizvGov.setText(cutString(Bproizv.toString()))
+                val got = BPotr + Bproizv + G
+                outputSocialW.setText(cutString(got.toString()))
             }
         }
     }

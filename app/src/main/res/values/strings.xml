@@ -19,5 +19,6 @@
     <string name="B_potr">B. потр.=</string>
     <string name="B_proizv">B. произ.=</string>
     <string name="G">G=</string>
-    <string name="government">Вмешательства государства</string>
+    <string name="government">Вмешательства государства (только для линейных Qs, Qd)</string>
+    <string name="social_welfare">Общественное благосостояние=</string>
 </resources>
