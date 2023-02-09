@@ -21,7 +21,7 @@ import kotlin.math.min
 import kotlin.math.sqrt
 
 fun getMap(givenString: String): Map<Int, Double> {
-    var res = mutableMapOf<Int, Double>()
+    val res = mutableMapOf<Int, Double>()
     var current_string = ""
     val len = givenString.length
     for (j in 0..2) {
@@ -29,7 +29,7 @@ fun getMap(givenString: String): Map<Int, Double> {
     }
     var i = 0
     while (i < len) {
-        if (givenString[i].equals('P')) {
+        if (givenString[i].equals('P') || givenString[i].equals('Q')) {
             if (i + 2 < len && givenString[i + 1].equals('^') && givenString[i + 2].equals('2')) {
                 if (current_string == "+" || current_string == "-" || current_string.isEmpty()) {
                     current_string += "1"
@@ -74,6 +74,8 @@ fun getStrWithoutSpace(givenString: String): String {
         if (!el.equals(' ')) {
             if (el.equals('p')) {
                 res += 'P'
+            } else if (el.equals('q')) {
+                res += 'Q'
             } else {
                 res += el
             }
@@ -165,6 +167,7 @@ class DemandFragment : Fragment() {
         val outputEGov: TextView = view.findViewById(R.id.outputEGov)
         val outputBPotrGov: TextView = view.findViewById(R.id.outputBPotrGov)
         val outputBProizvGov: TextView = view.findViewById(R.id.outputBProizvGov)
+        val outputSocialWGOV: TextView = view.findViewById(R.id.outputSocialWGOV)
         val outputSocialW: TextView = view.findViewById(R.id.outputSocialW)
 
         button.setOnClickListener {
@@ -226,6 +229,8 @@ class DemandFragment : Fragment() {
                     }
                     outputBProizv.setText(cutString(getSquareForQs(rsQs, p, q).toString()))
                     outputBPotr.setText(cutString(getSqureForQd(rsQd, p, q).toString()))
+                    val got = getSquareForQs(rsQs, p, q) + getSqureForQd(rsQd, p, q)
+                    outputSocialW.setText(cutString(got.toString()))
                 }
                 val a1 = rsQs[2]
                 val b1 = rsQs[1]
@@ -252,7 +257,7 @@ class DemandFragment : Fragment() {
                 outputBPotrGov.setText(cutString(BPotr.toString()))
                 outputBProizvGov.setText(cutString(Bproizv.toString()))
                 val got = BPotr + Bproizv + G
-                outputSocialW.setText(cutString(got.toString()))
+                outputSocialWGOV.setText(cutString(got.toString()))
             }
         }
     }
