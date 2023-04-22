@@ -6,7 +6,7 @@
     <string name="monopoly">Монополия</string>
     <string name="calc">Экономический калькулятор</string>
     <string name="main_menu">Главное меню</string>
-    <string name="perfect_comp">Совершенная конкуренция</string>
+    <string name="perfect_comp">Олигополия</string>
     <string name="finances">Финансы</string>
     <string name="input_f">Введите функцию Qs</string>
     <string name="input_s">Введите функцию Qd</string>
@@ -16,8 +16,8 @@
     <string name="tx">tx=</string>
     <string name="ty">ty=</string>
     <string name="done">Готово</string>
-    <string name="B_potr">B. потр.=</string>
-    <string name="B_proizv">B. произ.=</string>
+    <string name="B_potr">Bыигрыш потр.=</string>
+    <string name="B_proizv">Bыигрыш произ.=</string>
     <string name="G">G=</string>
     <string name="government">Вмешательства государства (только для линейных Qs, Qd)</string>
     <string name="social_welfare">Общественное благосостояние=</string>
@@ -28,4 +28,39 @@
     <string name="output_AVC">AVC=</string>
     <string name="output_VC">VC=</string>
     <string name="profit">Прибыль=</string>
+    <string name="X_eq">Платеж=</string>
+    <string name="S_eq">Сумма=</string>
+    <string name="P_eq">Ставка=</string>
+    <string name="N_eq">Количество=</string>
+    <string name="Credits">Кредиты</string>
+    <string name="output_AC">AC=</string>
+    <string name="input_TC1">Введите TC1</string>
+    <string name="input_TC2">Введите TC2</string>
+    <string name="input_TC3">Введите TC3</string>
+    <string name="input_TC4">Введите TC4</string>
+    <string name="input_TC5">Введите TC5</string>
+    <string name="input_TC6">Введите TC6</string>
+
+    <string name="out_q1">q1=</string>
+    <string name="out_q2">q2=</string>
+    <string name="out_q3">q3=</string>
+    <string name="out_q4">q4=</string>
+    <string name="out_q5">q5=</string>
+    <string name="out_q6">q6=</string>
+
+    <string name="out_p1">p1=</string>
+    <string name="out_p2">p2=</string>
+    <string name="out_p3">p3=</string>
+    <string name="out_p4">p4=</string>
+    <string name="out_p5">p5=</string>
+    <string name="out_p6">p6=</string>
+
+    <string name="out_TC1">TC1=</string>
+    <string name="out_TC2">TC2=</string>
+    <string name="out_TC3">TC3=</string>
+    <string name="out_TC4">TC4=</string>
+    <string name="out_TC5">TC5=</string>
+    <string name="out_TC6">TC6=</string>
+
+    <string name="out_P">P=</string>
 </resources>
