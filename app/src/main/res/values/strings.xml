@@ -6,7 +6,8 @@
     <string name="monopoly">Монополия</string>
     <string name="calc">Экономический калькулятор</string>
     <string name="main_menu">Главное меню</string>
-    <string name="perfect_comp">Олигополия</string>
+    <string name="perfect_comp">Олигополия по Курно</string>
+    <string name="oligopoly">Олигополия по Штакельбергу</string>
     <string name="finances">Финансы</string>
     <string name="input_f">Введите функцию Qs</string>
     <string name="input_s">Введите функцию Qd</string>
@@ -63,4 +64,5 @@
     <string name="out_TC6">TC6=</string>
 
     <string name="out_P">P=</string>
+    <string name="input">Ввод</string>
 </resources>

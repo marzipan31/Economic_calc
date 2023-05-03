@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_mainFragment_to_financesFragment"
             app:destination="@id/financesFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_oligopolyFragment"
+            app:destination="@id/oligopolyFragment" />
     </fragment>
     <fragment
         android:id="@+id/demandFragment"
@@ -36,10 +39,17 @@
     <fragment
         android:id="@+id/perfectCompetitionFragment"
         android:name="com.example.calc.PerfectCompetitionFragment"
-        android:label="@string/perfect_comp" />
+        android:label="@string/perfect_comp"
+        tools:layout="@layout/fragment_perfect_competition"/>
     <fragment
         android:id="@+id/financesFragment"
         android:name="com.example.calc.FinancesFragment"
         android:label="@string/finances"
         tools:layout="@layout/fragment_finances" />
+    <fragment
+        android:id="@+id/oligopolyFragment"
+        android:name="com.example.calc.OligopolyFragment"
+        android:label="@string/oligopoly"
+        tools:layout="@layout/fragment_oligopoly"
+        />
 </navigation>

@@ -11,17 +11,13 @@ import android.widget.TextView
 import com.example.calc.R
 import kotlin.math.abs
 
-fun get(A: Double, B: Double, C: Double): Double {
-    return -B / 2 / A
-}
-
-class PerfectCompetitionFragment : Fragment() {
+class OligopolyFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_perfect_competition, container, false)
+        return inflater.inflate(R.layout.fragment_oligopoly, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -66,11 +62,10 @@ class PerfectCompetitionFragment : Fragment() {
 
             var q1 = 0.0
             var q2 = 0.0
-            q1 = (bd + b1 * ad * (2 * c2 - 1 / ad) + bd + b2 * ad) / (1 - ad * (2 * c1 - 1 / ad))
-            q2 = (bd + b2 * ad * (2 * c1 - 1 / ad) + bd + b1 * ad) / (1 - ad * (2 * c2 - 1 / ad))
+            q1 = (ad + b2 * bd + (ad + b2 * bd) * (2 * c2 * bd - 2)) / (1 - (2 * c2 * bd - 2) * (2 * c1 * bd - 2))
+            q2 = (q1 - ad - b2 * bd) / (2 * c2 * bd - 2)
             q1 = abs(q1)
             q2 = abs(q2)
-
             val q = q1 + q2
             val p = (q - bd) / ad
             val tc1 = a1 + b1 * q1 + c1 * q1 * q1

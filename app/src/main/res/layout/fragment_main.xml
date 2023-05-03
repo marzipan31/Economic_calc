@@ -23,6 +23,21 @@
         app:layout_constraintVertical_bias="0.122" />
 
     <Button
+        android:id="@+id/button_oligopoly"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@color/color_for_button"
+        android:text="@string/oligopoly"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_fin"
+        app:layout_constraintVertical_bias="0.196" />
+
+    <Button
         android:id="@+id/button_mon"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

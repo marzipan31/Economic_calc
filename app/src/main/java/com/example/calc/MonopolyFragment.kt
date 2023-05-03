@@ -107,7 +107,7 @@ class MonopolyFragment : Fragment() {
             output_VC_VAL.setText("=" + cutString(resVC_VAL.toString()))
             val profit = P * Q - resTC
             output_Profit.setText(cutString(profit.toString()))
-            val win = P * (b_QD - Q) / 2
+            val win = (b_QD - P) * Q / 2
             output_B_Potr.setText(cutString(win.toString()))
         }
     }

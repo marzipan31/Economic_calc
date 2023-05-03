@@ -25,10 +25,12 @@ class MainFragment : Fragment() {
         val mon = view.findViewById<Button>(R.id.button_mon)
         val perf_comp = view.findViewById<Button>(R.id.button_perf_comp)
         val fins = view.findViewById<Button>(R.id.button_fin)
+        val olig = view.findViewById<Button>(R.id.button_oligopoly)
         val controller = findNavController()
         sup_dem.setOnClickListener { controller.navigate(R.id.demandFragment) }
         mon.setOnClickListener { controller.navigate(R.id.monopolyFragment) }
         perf_comp.setOnClickListener { controller.navigate(R.id.perfectCompetitionFragment) }
         fins.setOnClickListener { controller.navigate(R.id.financesFragment) }
+        olig.setOnClickListener { controller.navigate(R.id.oligopolyFragment) }
     }
 }
