@@ -62,8 +62,9 @@ class OligopolyFragment : Fragment() {
 
             var q1 = 0.0
             var q2 = 0.0
-            q1 = (ad + b2 * bd + (ad + b2 * bd) * (2 * c2 * bd - 2)) / (1 - (2 * c2 * bd - 2) * (2 * c1 * bd - 2))
-            q2 = (q1 - ad - b2 * bd) / (2 * c2 * bd - 2)
+            q1 =
+                -(((-bd / ad - b2) / (2 * (c2 - 1 / ad)) - bd) / ad - b1) / (2 * (1 / ad - c1 + 1 / ad / (2 * (c2 - 1 / ad)) / ad))
+            q2 = (q1 / ad - bd / ad - b2) / (2 * (c2 - 1 / ad))
             q1 = abs(q1)
             q2 = abs(q2)
             val q = q1 + q2
